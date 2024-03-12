@@ -1,0 +1,18 @@
+p {
+    font-family: Lato;
+  }
+  #sidebar {
+    max-width: 500px;
+    margin: 0 auto;
+    overflow: auto;
+  }
+  #header {
+    height: 50px;
+  }
+  
+  @media screen and (max-width: 510px) {
+    #sidebar {
+      margin: 0 20px;
+    }
+  }
+  

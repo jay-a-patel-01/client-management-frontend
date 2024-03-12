@@ -1,0 +1,163 @@
+<div class="container">
+  <div class="row mt-2 box">
+    <div class="col-12 col-md-10 m-auto">
+      <h3 class="text-primary my-5 mt-1" style="text-align: center">
+        <span> Customer Master</span>
+      </h3>
+    </div>
+
+    <div class="col-12 col-md-10 m-auto">
+      <form [formGroup]="customerForm" class="bg-lite px-5" novalidate>
+        <div class="col-12 mt-2">
+          <div class="row">
+            <div class="col-12 col-md-5 mb-auto mt-auto">
+              <label class="required-field" for="customerName"
+                >Customer Name
+              </label>
+            </div>
+            <div class="col-12 col-md-7">
+              <input
+                type="text"
+                class="form-control error-text"
+                id="customerName"
+                placeholder=""
+                formControlName="customerName"
+                maxlength="50"
+                autofocus
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 mt-2">
+          <div class="row">
+            <div class="col-12 col-md-5 mb-auto mt-auto">
+              <label class="required-field" for="email">Email </label>
+            </div>
+            <div class="col-12 col-md-7">
+              <input
+                type="email"
+                class="form-control error-text"
+                id="email"
+                placeholder=""
+                formControlName="email"
+                maxlength="50"
+                autofocus
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 mt-2">
+          <div class="row">
+            <div class="col-12 col-md-5 mb-auto mt-auto">
+              <label class="required-field" for="mobileNumber"
+                >Mobile Number
+              </label>
+            </div>
+            <div class="col-12 col-md-7">
+              <input
+                type="phone"
+                class="form-control error-text"
+                id="mobileNumber"
+                placeholder=""
+                formControlName="mobileNumber"
+                maxlength="50"
+                autofocus
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 mt-3">
+          <div class="row">
+            <div class="col-12 col-md-5 mb-auto mt-auto">
+              <label class="required-field" for="countryId"
+                >Country Name
+              </label>
+            </div>
+            <div class="col-12 col-md-7">
+              <select
+                id="countryId"
+                (change)="onChangeCountry($event)"
+                class="form-select form-control text-xl-start"
+                style="width: 100%"
+                formControlName="countryId"
+              >
+                <option disabled value="">Select Country</option>
+                <option
+                  *ngFor="let country of countryList"
+                  [value]="country.id"
+                >
+                  {{ country.countyName }}
+                </option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 mt-3">
+          <div class="row">
+            <div class="col-12 col-md-5 mb-auto mt-auto">
+              <label class="required-field" for="stateId">State Name </label>
+            </div>
+            <div class="col-12 col-md-7">
+              <select
+                id="stateId"
+                (change)="onChangeState($event)"
+                class="form-select form-control text-xl-start"
+                style="width: 100%"
+                formControlName="stateId"
+              >
+                <option disabled value="">Select State</option>
+                <ng-container>
+                  <option *ngFor="let state of stateList" [value]="state.id">
+                    {{ state.sateName }}
+                  </option>
+                </ng-container>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 mt-3">
+          <div class="row">
+            <div class="col-12 col-md-5 mb-auto mt-auto">
+              <label class="required-field" for="cityId">city Name </label>
+            </div>
+            <div class="col-12 col-md-7">
+              <select
+                id="cityId"
+                class="form-select form-control text-xl-start"
+                style="width: 100%"
+                formControlName="cityId"
+              >
+                <option disabled value="">Select City</option>
+                <ng-container>
+                  <option *ngFor="let city of cityList" [value]="city.id">
+                    {{ city.cityName }}
+                  </option>
+                </ng-container>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 mt-4 pb-3" style="text-align: center">
+          <button
+            type="button"
+            class="btn btn-primary btn-sm mr-2"
+            (click)="saveCustomer()"
+            [disabled]="customerForm.invalid"
+            id="submitButton"
+          >
+            Submit
+          </button>
+          <button (click)="reset()" type="button" class="btn btn-dark btn-sm">
+            Reset
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,9 @@
+ 
+
+<ngb-pagination
+  *ngIf="totalRecords>0"
+  [(page)]="currentPage"
+  [pageSize]="pageSize"
+  [maxSize]="10"
+  (pageChange)="onPageChanged()"
+  [collectionSize]="totalRecords"></ngb-pagination>

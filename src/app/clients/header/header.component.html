@@ -1,0 +1,87 @@
+<div class="row rm-header">
+  <div class="row" style="width: 101%">
+    <div class="col-md-2">
+      <!-- <a class="navbar-brand">
+        <img src ="../../assets/logo.png" height="130px" class="rm-banner" />
+      
+      </a> -->
+      
+    </div> 
+
+    <div class="col-md-8 banner-container rm-sm-hide">
+      
+      <div class="row">
+        <ng-container>
+          <div class="col-md-2 text-center">
+            <div class="banner-text text-center"></div>
+          </div>
+          <div class="col-md-10">
+            <!-- <img
+              class="rm-banner-img"
+              [attr.width]="'100%'"
+              src="../../assets/coverImg.png"
+            /> -->
+            <br>
+            <h1 style="color: brown;">Client Management</h1>
+            
+          </div>
+        </ng-container>
+      </div>
+    </div>
+
+
+    <div class="col-md-2 rm-langdd">
+      <div class="row layout">
+       
+
+        <div class="col-md-8">
+        <div ngbDropdown class="d-inline-block">
+         
+
+          <div style="width: 100%">{{userName}}
+            <br>
+            <button class="button2" (click)="signOut()"> 
+              <i class="fa fa-sign-out"> Logout</i>
+            </button>
+          </div>
+        </div>
+      </div>
+     </div>
+    </div>
+ 
+  </div>
+
+
+</div>
+
+
+ <div class="cand-menu">
+
+  <nav class="navbar navbar-expand-md pad0" [ngStyle]="getFirstStyles()">
+      <div class="collapse navbar-collapse justify-content-center">
+          <ul class="navbar-nav">
+
+         
+
+           <!-- <li>
+              <div class="menu-item" style="cursor:pointer;">
+                  <i  class="pl-20 fas fa-mail-bulk"></i>
+                  <a class="menu-link" (click)="openJobs()">{{"Add Item"}}</a>
+              </div>
+            </li> 
+
+            <li>
+              <div class="menu-item" style="cursor:pointer;">
+                  <i  class="pl-20 fa fa-credit-card"></i>
+                  <a class="menu-link" (click)="uploadSchedule()">{{"Add Transaction"}}</a>
+              </div>
+            </li>   -->
+
+            
+        
+          
+          </ul>
+
+      </div>
+  </nav>
+</div>

@@ -1,0 +1,11 @@
+.bg-lite {
+  background-color: rgb(223, 173, 173);
+}
+
+.ml-auto {
+  margin-left: auto;
+}
+
+.text-start {
+  text-align: start !important;
+}

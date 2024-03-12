@@ -1,0 +1,35 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* @import 'bootstrap'; */
+
+.error-text {
+  font-size: 12px;
+}
+
+.required-field::after {
+  content: "*";
+  color: red;
+}
+
+.text-green {
+  color: lightgreen;
+}
+
+input {
+  font-size: 12px;
+}
+
+@media print {
+  .doNotPrint {
+    display: none !important;
+  }
+}
+
+input[disabled] + label {
+  color: black !important;
+}
+
+
+/* 
+@import './theme/custom.css'; */
+

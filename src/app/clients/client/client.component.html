@@ -1,0 +1,198 @@
+<div class="container">
+  <div class="row mt-2 box">
+    <div class="col-12 col-md-10 m-auto">
+      <h3 class="text-primary my-5 mt-1" style="text-align: center">
+        <span> Client Master</span>
+      </h3>
+    </div>
+
+    <div class="col-12 col-md-10 m-auto">
+      <form [formGroup]="clientForm" class="bg-lite px-5" novalidate>
+        <div class="col-12 mt-2">
+          <div class="row">
+            <div class="col-12 col-md-5 mb-auto mt-auto">
+              <label class="required-field" for="clientName"
+                >Client Name
+              </label>
+            </div>
+            <div class="col-12 col-md-7">
+              <input
+                type="text"
+                class="form-control error-text"
+                id="clientName"
+                placeholder=""
+                formControlName="clientName"
+                maxlength="50"
+                autofocus
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 mt-2">
+          <div class="row">
+            <div class="col-12 col-md-5 mb-auto mt-auto">
+              <label class="required-field" for="email">Email </label>
+            </div>
+            <div class="col-12 col-md-7">
+              <input
+                type="email"
+                class="form-control error-text"
+                id="email"
+                placeholder=""
+                formControlName="email"
+                maxlength="50"
+                autofocus
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 mt-2">
+          <div class="row">
+            <div class="col-12 col-md-5 mb-auto mt-auto">
+              <label class="required-field" for="password">Password </label>
+            </div>
+            <div class="col-12 col-md-7">
+              <input
+                type="password"
+                class="form-control error-text"
+                id="password"
+                placeholder=""
+                formControlName="password"
+                maxlength="50"
+                autofocus
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 mt-2">
+          <div class="row">
+            <div class="col-12 col-md-5 mb-auto mt-auto">
+              <label class="required-field" for="mobileNumber"
+                >Mobile Number
+              </label>
+            </div>
+            <div class="col-12 col-md-7">
+              <input
+                type="phone"
+                class="form-control error-text"
+                id="mobileNumber"
+                placeholder=""
+                formControlName="mobileNumber"
+                maxlength="50"
+                autofocus
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 mt-2">
+          <div class="row">
+            <div class="col-12 col-md-5 mb-auto mt-auto">
+              <label class="required-field" for="address">Address </label>
+            </div>
+            <div class="col-12 col-md-7">
+              <textarea
+                type="phone"
+                class="form-control error-text"
+                id="address"
+                placeholder=""
+                formControlName="address"
+                maxlength="50"
+              >
+              </textarea>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 mt-3">
+          <div class="row">
+            <div class="col-12 col-md-5 mt-auto mb-auto">
+              <label class="required-field" for="subscription_start_date"
+                >Subscription Start Date (DD-MM-YYYY)
+              </label>
+            </div>
+            <div class="col-12 col-md-7">
+              <div class="input-group">
+                <input
+                  type="text"
+                  #df="bsDatepicker"
+                  placeholder="Datepicker"
+                  class="form-control"
+                  bsDatepicker
+                  [bsValue]="bsValue"
+                  [maxLength]="10"
+                  placeholder="DD-MM-YYYY"
+                  id="subscription_start_date"
+                  name="subscription_start_date"
+                  formControlName="subscription_start_date"
+                  [maxDate]="todayDate"
+                  [bsConfig]="{ dateInputFormat: 'DD-MM-YYYY' }"
+                />
+                <div class="input-group-append">
+                  <button
+                    class="btn btn-primary fas fa-calendar-alt"
+                    (click)="df.toggle()"
+                    type="button"
+                  ></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 mt-3">
+          <div class="row">
+            <div class="col-12 col-md-5 mt-auto mb-auto">
+              <label class="required-field" for="subscription_end_date"
+                >Subscription End Date (DD-MM-YYYY)
+              </label>
+            </div>
+            <div class="col-12 col-md-7">
+              <div class="input-group">
+                <input
+                  type="text"
+                  #df2="bsDatepicker"
+                  placeholder="Datepicker"
+                  class="form-control"
+                  bsDatepicker
+                  [bsValue]="bsValue"
+                  [maxLength]="10"
+                  placeholder="DD-MM-YYYY"
+                  id="subscription_end_date"
+                  name="subscription_end_date"
+                  formControlName="subscription_end_date"
+                  [maxDate]="todayDate"
+                  [bsConfig]="{ dateInputFormat: 'DD-MM-YYYY' }"
+                />
+                <div class="input-group-append">
+                  <button
+                    class="btn btn-primary fas fa-calendar-alt"
+                    (click)="df2.toggle()"
+                    type="button"
+                  ></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 mt-4 pb-3" style="text-align: center">
+          <button
+            type="button"
+            class="btn btn-primary btn-sm mr-2"
+            (click)="saveClient()"
+            [disabled]="clientForm.invalid"
+            id="submitButton"
+          >
+            Submit
+          </button>
+          <button (click)="reset()" type="button" class="btn btn-dark btn-sm">
+            Reset
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

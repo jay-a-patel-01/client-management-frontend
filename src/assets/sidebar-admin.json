@@ -1,0 +1,17 @@
+[
+   
+    {
+      "linkText": "Client Management",
+      "parentLink": "",
+      "menu": false,
+      "submenu": [
+        {
+          "childtext": "Client List",
+          "link": "client-list"
+        }
+        
+      ]
+    }
+   
+  ]
+  

@@ -1,0 +1,75 @@
+<div class="row" style="text-align: right !important">
+  <div class="col-md-12">
+    <h3 class="text-primary my-1 mt-1" style="text-align: center">
+      <span> Customer List </span>
+      <span class="col-md-6 text-right">
+        <button type="button" class="btn btn-success" (click)="exportexcel()">
+          Download
+        </button>
+      </span>
+    </h3>
+    <button class="button2" (click)="Add()">
+      <i class="fa fa-add">Add customer</i>
+    </button>
+  </div>
+</div>
+<div class="row mt-4" style="font-style: normal; font-size: 70%">
+  <div class="col-md-2">
+    <label for="filter.customerName" style="font-weight: bold">Customer</label>
+    <select
+      name="filter.customerName"
+      class="custom-select"
+      [(ngModel)]="filter.customerName"
+      (ngModelChange)="getReport()"
+    >
+      <option [ngValue]="null">All Customers</option>
+      <option *ngFor="let l1 of customers" [ngValue]="l1.customerName">
+        {{ l1.customerName }}
+      </option>
+    </select>
+  </div>
+</div>
+
+<div class="row" style="margin-top: 20px">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="" style="font-style: normal; font-size: 40%">
+        <div class="table-container">
+          <table class="table" id="excel-table">
+            <thead>
+              <th>Sr.No</th>
+              <th>Customer Name</th>
+              <th>Email</th>
+              <th>Mobile Number</th>
+              <th>Country Name</th>
+              <th>State Name</th>
+              <th>City Name</th>
+              <th>Action</th>
+            </thead>
+            <tbody>
+              <tr *ngFor="let row of rows; let i = index">
+                <td>{{ i + 1 }}</td>
+
+                <td>{{ row.customerName }}</td>
+                <td>{{ row.email }}</td>
+                <td>{{ row.mobileNumber }}</td>
+                <td>{{ row.countryId }}</td>
+                <td>{{ row.stateId }}</td>
+                <td>{{ row.cityId }}</td>
+                <td>
+                  <span class="mr-4" (click)="edit(row._id)">
+                    <i class="fa fa-edit mr-1"></i> <span>Edit</span>
+                  </span>
+
+                  <span (click)="delete(row._id)">
+                    <i class="fa fa-remove mr-1"></i> <span>Delete</span>
+                  </span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,14 @@
+[
+   
+  {
+    "linkText": "Customer Management",
+    "parentLink": "",
+    "menu": false,
+    "submenu": [
+      {
+        "childtext": "Customer List",
+        "link": "customer-list"
+      }
+    ]
+  }
+]
